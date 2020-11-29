@@ -10,7 +10,9 @@ import           Reanimate.Transition
 main :: IO ()
 main = reanimate
   $ docEnv
-  $ staticFrame 1
-  $ mkLine
-    (screenLeft, screenBottom)
-    (screenRight, screenTop)
+  $ animate
+  $ \t -> partialSvg t
+  $ pathify customLine
+
+customLine :: SVG -- same as Tree
+customLine = mkLine (screenLeft, screenBottom) (0, screenTop)
