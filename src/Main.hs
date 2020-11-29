@@ -8,4 +8,9 @@ import           Reanimate.Builtin.Documentation
 import           Reanimate.Transition
 
 main :: IO ()
-main = reanimate $ docEnv $ playThenReverseA drawCircle
+main = reanimate
+  $ docEnv
+  $ staticFrame 1
+  $ mkLine
+    (screenLeft, screenBottom)
+    (screenRight, screenTop)
